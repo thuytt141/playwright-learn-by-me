@@ -25,10 +25,3 @@ jobs:
       
       - name: Run tests
         run: npx playwright test --grep @Lead-menu
-      
-      - name: Save test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-report
-          path: playwright-report/

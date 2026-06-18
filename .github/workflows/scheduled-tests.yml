@@ -25,3 +25,11 @@ jobs:
       
       - name: Run tests
         run: npx playwright test --grep @Lead-menu
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
